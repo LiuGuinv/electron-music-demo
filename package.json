@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
+  "build": {
+    "appId": "com.xxx.app",
+    "mac": {
+      "target": ["dmg","zip"]
+    },
+    "win": {
+      "target": ["nsis","zip"]
+    }
+  },
   "scripts": {
-    "start": "electron ."
+    "start": "nodemon --watch main.js --exec electron .",
+    "dist": "electron-builder --win --x64"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +27,13 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^5.0.7"
+    "electron": "^5.0.7",
+    "electron-builder": "^21.1.1",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "electron-store": "^4.0.0",
+    "uuid": "^3.3.2"
   }
 }

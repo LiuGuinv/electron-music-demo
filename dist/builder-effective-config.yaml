@@ -1,0 +1,13 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.xxx.app
+mac:
+  target:
+    - dmg
+    - zip
+win:
+  target:
+    - nsis
+    - zip
+electronVersion: 5.0.7
